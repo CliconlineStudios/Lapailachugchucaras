@@ -1,13 +1,69 @@
+let ids = '';
+
+function ids1 () {
+    ids = 'servicios.html';
+    history.pushState(`Selected: ${ids}`, `./${ids}`);
+    pages = 'servicios.html.html';
+
+};
+
+function ids2 () {
+    ids = 'carrito.html';
+    history.pushState(`Selected: ${ids}`, `./${ids}`);
+    pages = 'carrito.html';
+
+};
+
+
+
+window.addEventListener('popstate', e => {
+    backweb();
+    
+});
+
+function backarriba(){
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        });       
+};
+
+function backweb() {
+   
+    if (contador==1) {
+        document.getElementById("informacion").style.display = "block";
+        document.getElementById("pedido").style.display = "none";
+        document.getElementById("portafolio").style.display = "none";
+        document.getElementById("side").style.display = "none";
+        document.getElementById("screen4").style.display = "none";
+        document.getElementById("carito2").style.display = "none";
+        conta=0;
+        contador=0;
+        backarriba();
+        history.back();
+
+    }
+    else if(contador==2){
+        document.getElementById("portafolio").style.display = "block";
+        document.getElementById("screen4").style.display = "none";
+        document.getElementById("pedido").style.display = "none";
+        document.getElementById("carito2").style.display = "flex";
+        contador=1;
+        backarriba();
+        ids1();
+
+    }
+    } 
 
 function inicio() {
     document.getElementById("informacion").style.display = "block";	
     document.getElementById("pedido").style.display = "none";
     document.getElementById("portafolio").style.display = "none";
-    document.getElementById("back").style.display = "none";
     document.getElementById("screen4").style.display = "none";
     document.getElementById("side").style.display = "none";
     conta=0;
     contador=0;
+    backweb();
 }
 
 
@@ -24,10 +80,10 @@ function servicios() {
     document.getElementById("informacion").style.display = "none";
     document.getElementById("portafolio").style.display = "grid";
     document.getElementById("carito2").style.display = "flex";
-    document.getElementById("back").style.display = "block";
     document.getElementById("side").style.display = "none";
     conta=0;
     contador=1;
+    ids1();
 }
 
 function mapas() {
@@ -42,7 +98,6 @@ function mapas() {
 function catalogos() {
     document.getElementById("informacion").style.display = "none";	
     document.getElementById("portafolio").style.display = "grid";
-    document.getElementById("back").style.display = "block";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
     document.getElementById("screen4").style.display = "none";
@@ -50,6 +105,7 @@ function catalogos() {
     document.getElementById("carito2").style.display = "flex";
     conta=0;
     contador=1;
+    ids1();
    
 }
 
@@ -58,15 +114,12 @@ function pedido() {
     document.getElementById("portafolio").style.display = "none";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
-    document.getElementById("back").style.display = "block";
     document.getElementById("pedido").style.display = "block";
     document.getElementById("carito2").style.display = "flex";
     conta=0;
     contador=2; 
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-       });
+    backarriba();
+    ids2();
  
     
 }
@@ -76,9 +129,9 @@ function cotizar() {
     document.getElementById("portafolio").style.display = "none";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
-    document.getElementById("back").style.display = "block";
     conta=0;
     contador=2; 
+    ids2();
  
     
 }
@@ -91,7 +144,6 @@ function mesa() {
     document.getElementById("calcular").style.display = "none";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
-    document.getElementById("back").style.display = "block";
     document.getElementById("carito2").style.display = "none";
     document.querySelector("#servicio").value =  `Mesa Número`;
     document.getElementById("submit").textContent=  `Pedir en Mesa`;
@@ -99,6 +151,7 @@ function mesa() {
     serviMPD = ``;
     conta=0;
     contador=2; 
+  
  
     
 }
@@ -110,14 +163,14 @@ function llevar() {
     document.getElementById("calcular").style.display = "block";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
-    document.getElementById("back").style.display = "block";
     document.getElementById("carito2").style.display = "none";
     document.querySelector("#servicio").value =  `Para Llevar`;
     document.getElementById("servi").textContent=  `Servicio`;
     document.getElementById("submit").textContent=  `Costo para llevar`;
     serviMPD = `Más Costo Para LLevar`;
     conta=0;
-    contador=2; 
+    contador=2;
+  
  
     
 }
@@ -128,7 +181,6 @@ function domicilio() {
     document.getElementById("portafolio").style.display = "none";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
-    document.getElementById("back").style.display = "block";
     document.getElementById("carito2").style.display = "none";
     document.querySelector("#servicio").value =  `a Domicilio `;
     document.getElementById("servi").textContent=  `Servicio`;
@@ -136,6 +188,7 @@ function domicilio() {
     serviMPD = `Más Costo de Envío`;
     conta=0;
     contador=2; 
+
  
     
 }
@@ -149,20 +202,23 @@ function back() {
         document.getElementById("informacion").style.display = "block";
         document.getElementById("pedido").style.display = "none";
         document.getElementById("portafolio").style.display = "none";
-        document.getElementById("back").style.display = "none";
         document.getElementById("side").style.display = "none";
         document.getElementById("screen4").style.display = "none";
         document.getElementById("carito2").style.display = "none";
         conta=0;
         contador=0;
+        backarriba();
+        history.back();
 
     }
-    else{
+    else if(contador==2){
         document.getElementById("portafolio").style.display = "block";
         document.getElementById("screen4").style.display = "none";
         document.getElementById("pedido").style.display = "none";
         document.getElementById("carito2").style.display = "flex";
         contador=1;
+        backarriba();
+        ids1();
         
 
     }}
@@ -229,19 +285,13 @@ document.querySelector('.tarjeta').addEventListener('click',()=>{
 
 document.querySelector('.side')   
 .addEventListener('click',()=>{
- window.scrollTo({
- top: 0,
- behavior: 'smooth'
-});
+    backarriba();
 });
 
 
 document.querySelector('.back')   
 .addEventListener('click',()=>{
- window.scrollTo({
- top: 0,
- behavior: 'smooth'
-});
+    backarriba();
 });
   
 
@@ -249,19 +299,13 @@ document.querySelector('.back')
 
         document.querySelector('.side1')   
         .addEventListener('click',()=>{
-         window.scrollTo({
-         top: 0,
-         behavior: 'smooth'
-        });
+            backarriba();
         });
 
 
         document.querySelector('.side3')   
         .addEventListener('click',()=>{
-         window.scrollTo({
-         top: 0,
-         behavior: 'smooth'
-        });
+            backarriba();
         });
 
 
@@ -319,7 +363,8 @@ function addProduct(e){
     e.preventDefault();
     if (e.target.classList.contains('btn-add-cart')) {
         const selectProduct = e.target.parentElement; 
-        readTheContent(selectProduct);     
+        readTheContent(selectProduct); 
+        msj2();    
     }
 }
 
@@ -570,9 +615,49 @@ document.querySelector("#submit").addEventListener("click", e => {
     window.open(url);
   });
     
+   //ALERTAS>
+   function save(){
+    let url = `https://drive.google.com/u/0/uc?id=1C4rHT4S4Q9xv8Vqrikt8jnykqPnxcfcq&export=download`;
+    window.open(url); 
+   };
+  
+  function ftuser() {
+      Swal.fire({
+          text: 'Comida Típica',
+          imageUrl: 'img/lapaila.png',
+          imageWidth: 200,
+          confirmButtonText: 'Añadir a Contactos',
+          showCloseButton: 'true',
+          showCancelButton: true,
     
+      
+        }).then((result) => {
+          if (result.isConfirmed) {
+            save();
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Descarga Correcta',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }
+        })
+  
+   
+  }; 
     
-    
+  function msj2() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Pedido',
+        text: 'Agregado al Carrito',
+        footer: 'la Paila Chugchucaras',
+        timer: 2000
+      });
+  
+   
+  }  
       
 
         
