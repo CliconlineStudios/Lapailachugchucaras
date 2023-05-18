@@ -16,17 +16,17 @@ body {
 
 @keyframes banner {
 	0%, 23% {
-		background-image: url(../img/banner1.png);
+		background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCZ2WpikqAEIYFwVtoAANSOtC_B71loE5N1H6Y8tcBHHx4HSR_6MJ_4am71htGKE0B9zrp3bAJ8S5yGxWmR_e4b6QcV_Id4IgSqXMznj1ZpyTEJQZxt0VP87PYeB0w51_5JgG-dTXn5MsSK0fzZ-CWFvg1ho5yQRZtiZixyAVLH1-H2oGbtSoIrH4/w640-h302/paila22.png);
 		
 	}
-	25%, 47% {
+	25%, 45% {
+		background-image: url(../img/banner1.png);
+	}
+	50%, 70% {
 		background-image: url(../img/banner2.png);
 	}
-	50%, 63% {
-		background-image: url(../img/banner3.png);
-	}
-	67%, 100% {
-		background-image: url(../img/banner5.jpg);
+	75%, 100% {
+		background-image: url(../img/banner4.png);
 	}
 }
 
