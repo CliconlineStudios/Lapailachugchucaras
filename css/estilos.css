@@ -25,10 +25,7 @@ body {
 	50%, 63% {
 		background-image: url(../img/banner3.png);
 	}
-	65%, 80% {
-		background-image: url(../img/banner4.png);
-	}
-	82%, 100% {
+	67%, 100% {
 		background-image: url(../img/banner5.jpg);
 	}
 }
